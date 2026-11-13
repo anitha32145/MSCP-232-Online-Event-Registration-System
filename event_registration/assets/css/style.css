@@ -1,0 +1,225 @@
+/* Online Event Registration System - custom styles */
+
+/* ---------- Colours of the user side (visitors and users) ---------- */
+/* Change these two values to change the whole user side:
+   --user-color  menu bar, banner and buttons
+   --user-dark   footer and the dark end of the banner */
+:root {
+    --user-color: #0f766e;
+    --user-dark: #134e4a;
+}
+
+body {
+    background-color: #f4f6f9;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #0d6efd, #0a3d91);
+    color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 4rem 2rem;
+}
+
+.hero-section h1 {
+    font-weight: 700;
+}
+
+.card {
+    border: none;
+    border-radius: 0.75rem;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+footer {
+    font-size: 0.9rem;
+}
+
+/* ---------- Menu bar: clear white links ---------- */
+.navbar .navbar-nav .nav-link {
+    color: #ffffff;
+    font-weight: 500;
+    padding: 0.5rem 0.9rem;
+    margin: 0 0.1rem;
+    border-radius: 0.375rem;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link:focus {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+/* The ADMIN / USER label next to the project name (not a link) */
+.role-badge {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+}
+
+.role-badge-user {
+    color: var(--user-color);
+}
+
+/* The name of the logged-in person, shown before the Logout button */
+.navbar .nav-username {
+    color: #ffffff;
+    display: inline-block;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+/* ---------- Visitor and user: teal ---------- */
+.navbar-user {
+    background-color: var(--user-color);
+}
+
+.navbar-user .navbar-nav .nav-link.active {
+    background-color: #ffffff;
+    color: var(--user-color);
+    font-weight: 600;
+}
+
+body.role-user .hero-section,
+body.role-guest .hero-section {
+    background: linear-gradient(135deg, var(--user-color), var(--user-dark));
+}
+
+body.role-user footer,
+body.role-guest footer {
+    background-color: var(--user-dark) !important;
+    border-top: 4px solid var(--user-color);
+}
+
+/* Buttons and badges on the user side match the teal theme */
+body.role-user .btn-primary,
+body.role-guest .btn-primary {
+    background-color: var(--user-color);
+    border-color: var(--user-color);
+}
+
+body.role-user .btn-primary:hover,
+body.role-guest .btn-primary:hover {
+    background-color: var(--user-dark);
+    border-color: var(--user-dark);
+}
+
+body.role-user .btn-outline-primary,
+body.role-guest .btn-outline-primary {
+    color: var(--user-color);
+    border-color: var(--user-color);
+}
+
+body.role-user .btn-outline-primary:hover,
+body.role-guest .btn-outline-primary:hover {
+    background-color: var(--user-color);
+    border-color: var(--user-color);
+    color: #ffffff;
+}
+
+body.role-user .badge.bg-primary,
+body.role-guest .badge.bg-primary {
+    background-color: var(--user-color) !important;
+}
+
+/* ---------- Administrator: dark charcoal with a red line ---------- */
+.navbar-admin {
+    background-color: #1f2933;
+    border-bottom: 4px solid #dc3545;
+}
+
+.navbar-admin .navbar-nav .nav-link.active {
+    background-color: #ffffff;
+    color: #1f2933;
+    font-weight: 600;
+}
+
+body.role-admin {
+    background-color: #e9ecef;
+}
+
+body.role-admin .hero-section {
+    background: linear-gradient(135deg, #343a40, #111827);
+}
+
+body.role-admin footer {
+    border-top: 4px solid #dc3545;
+}
+
+/* ---------- Printing: hide the menu bar and footer, keep only the report ---------- */
+@media print {
+    .navbar,
+    footer {
+        display: none !important;
+    }
+
+    body {
+        background-color: #ffffff;
+    }
+
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #dee2e6;
+    }
+}
+
+
+/* ---------- Visitor (not logged in): navy blue ---------- */
+/* Change these two values to change the whole visitor look */
+:root {
+    --guest-color: #1e40af;
+    --guest-dark: #172554;
+}
+
+.navbar-guest {
+    background-color: var(--guest-color);
+}
+
+.navbar-guest .navbar-nav .nav-link.active {
+    background-color: #ffffff;
+    color: var(--guest-color);
+    font-weight: 600;
+}
+
+body.role-guest .hero-section {
+    background: linear-gradient(135deg, var(--guest-color), var(--guest-dark));
+}
+
+body.role-guest footer {
+    background-color: var(--guest-dark) !important;
+    border-top: 4px solid var(--guest-color);
+}
+
+body.role-guest .btn-primary {
+    background-color: var(--guest-color);
+    border-color: var(--guest-color);
+}
+
+body.role-guest .btn-primary:hover {
+    background-color: var(--guest-dark);
+    border-color: var(--guest-dark);
+}
+
+body.role-guest .btn-outline-primary {
+    color: var(--guest-color);
+    border-color: var(--guest-color);
+}
+
+body.role-guest .btn-outline-primary:hover {
+    background-color: var(--guest-color);
+    border-color: var(--guest-color);
+    color: #ffffff;
+}
+
+body.role-guest .badge.bg-primary {
+    background-color: var(--guest-color) !important;
+}
